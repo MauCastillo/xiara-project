@@ -1,5 +1,11 @@
 import Vue from 'vue'
-import App from './App.vue'
+import App from './views/App.vue'
+import VueRouter from 'vue-router'
+
+Vue.use(VueRouter)
+
+import '@/assets/css/main.css'
+import '@/assets/css/fontawesome-all.min.css'
 
 Vue.config.productionTip = false
 
