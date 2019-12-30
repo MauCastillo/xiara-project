@@ -1,18 +1,23 @@
 <template>
   <div id="app">
-    <Base/>
-    <Home/>
+    <Navbar />
+    <Home />
+    <Footer />
   </div>
 </template>
 
 <script>
-import Base from '../components/Article.vue'
-import Home from '../components/Home.vue'
+// import Base from '../components/Article.vue'
+import Home from "../components/Home.vue"
+import Footer from "../components/Footer.vue"
+import Navbar from "../components/Navbar.vue"
+
 export default {
-  name: 'app',
+  name: "app",
   components: {
     Home,
-    Base
+    Navbar,
+    Footer
   }
 }
 </script>

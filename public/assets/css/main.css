@@ -1563,7 +1563,7 @@ input, select, textarea {
 			}
 
 	footer {
-		margin: 2.25em 0 0 0;
+		margin: 1.25em 0 0 0;
 	}
 
 /* Box */
@@ -2291,7 +2291,7 @@ input, select, textarea {
 	#footer {
 		position: relative;
 		color: #858484;
-		padding: 4em 0;
+		padding: 2em 0;
 	}
 
 		#footer:before {
@@ -2427,7 +2427,7 @@ input, select, textarea {
 		/* Footer */
 
 			#footer {
-				padding: 3em 0;
+				padding: 2em 0;
 			}
 
 				#footer:before {
@@ -2902,7 +2902,8 @@ input, select, textarea {
 		/* Footer */
 
 			#footer {
-				padding: 40px 0 20px 0;
+				padding: 5px 0 10px 0;
 			}
 
 	}
+
