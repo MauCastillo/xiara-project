@@ -11,10 +11,10 @@
         <nav id="nav">
             <ul>
                 <li class="current">
-                    <a href="index.html">Inicio</a>
+                    <router-link to="/home">Inicio</router-link>
                 </li>
                 <li>
-                    <a href="#">Projectos</a>
+                    <router-link to="/projects">Proyectos</router-link>
                     <ul>
                         <li>
                             <a href="#">Lorem ipsum dolor</a>
@@ -31,13 +31,16 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="left-sidebar.html">Blog</a>
+                     <router-link to="/blog">Blog</router-link>
                 </li>
                 <li>
-                    <a href="left-sidebar.html">About Me</a>
+                     <router-link to="/article">About Me</router-link>
                 </li>
             </ul>
         </nav>
     </section>
+    <!-- route outlet -->
+    <!-- component matched by the route will render here -->
+    <router-view></router-view>
 </div>
 </template>
