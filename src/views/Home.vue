@@ -11,7 +11,12 @@
                     <section>
                         <header class="major">
                             <h2>My Portfolio</h2>
+                            <router-link to="/foo">Go to Foo</router-link>
+                            <router-link to="/bar">Go to Bar</router-link>
                         </header>
+                        <!-- route outlet -->
+                        <!-- component matched by the route will render here -->
+                        <router-view></router-view>
                         <div class="row">
                             <div class="col-4 col-6-medium col-12-small">
                                 <section class="box">
