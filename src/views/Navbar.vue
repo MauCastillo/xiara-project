@@ -4,7 +4,7 @@
     <section id="header">
         <!-- Logo -->
         <h1>
-            <a href="index.html">Xiara</a>
+            <a href="index.html">Xiara Blog</a>
         </h1>
 
         <!-- Nav -->
@@ -31,7 +31,7 @@
                     </ul>
                 </li>
                 <li>
-                     <router-link to="/blog">Blog</router-link>
+                     <router-link to="/blog">Articulos</router-link>
                 </li>
                 <li>
                      <router-link to="/article">About Me</router-link>
