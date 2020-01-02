@@ -21,6 +21,7 @@
                                     <header>
                                         <h3>Ipsum feugiat et dolor</h3>
                                     </header>
+                                    <router-link to="/article/example">/user/foo</router-link>
                                     <p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
                                     <footer>
                                         <ul class="actions">

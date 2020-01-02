@@ -1,17 +1,23 @@
 <template>
 <div id="page-wrapper">
-
     <!-- Main -->
     <section id="main">
         <div class="container">
-
             <!-- Content -->
             <article class="box post">
-                <a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+                <a href="#" class="image featured">
+                    <img src="images/pic01.jpg" alt />
+                </a>
                 <header>
-                    <h2>No Sidebar</h2>
+                    <h2>{{ $route.params.post_id }}</h2>
                     <p>Lorem ipsum dolor sit amet feugiat</p>
                 </header>
+                <div>User {{ $route.params.post_id }}</div>
+
+                <h1>No entiendo que esta pasando {{mensaje}}</h1>
+                <h1>No tiene sentido: {{cosa}}</h1>
+                <button v-on:click="nextPage">Reverse Message</button>
+
                 <p>
                     Vestibulum scelerisque ultricies libero id hendrerit. Vivamus malesuada quam faucibus ante dignissim auctor
                     hendrerit libero placerat. Nulla facilisi. Proin aliquam felis non arcu molestie at accumsan turpis commodo.
@@ -63,7 +69,6 @@
                     </p>
                 </section>
             </article>
-
         </div>
     </section>
 </div>
@@ -71,11 +76,21 @@
 
 <script>
 export default {
-    name: 'HelloWorld',
-    props: {
-        msg: String
+    data() {
+        return {
+            mensaje: "Elemento ramdon 1111",
+            cosa: this.$route.params.post_id
+        };
+    },
+    methods: {
+        nextPage() {
+            this.cosa = this.$route.params.post_id
+        },
+        created() {
+            this.cosa = this.$route.params.post_id
+        },
     }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
