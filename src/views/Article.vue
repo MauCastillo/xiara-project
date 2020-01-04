@@ -6,66 +6,28 @@
             <!-- Content -->
             <article class="box post">
                 <a href="#" class="image featured">
-                    <img src="images/pic01.jpg" alt />
+                    <img :src="banner" alt />
                 </a>
                 <header>
-                    <h2>{{ $route.params.post_id }}</h2>
-                    <p>Lorem ipsum dolor sit amet feugiat</p>
+                    <h2>{{ title }}</h2>
+                    <p>{{ meta_description }}</p>
                 </header>
-                <div>User {{ $route.params.post_id }}</div>
+                <div v-html="body"></div>
 
-                <h1>No entiendo que esta pasando {{mensaje}}</h1>
-                <h1>No tiene sentido: {{cosa}}</h1>
-                <button v-on:click="nextPage">Reverse Message</button>
-
-                <p>
-                    Vestibulum scelerisque ultricies libero id hendrerit. Vivamus malesuada quam faucibus ante dignissim auctor
-                    hendrerit libero placerat. Nulla facilisi. Proin aliquam felis non arcu molestie at accumsan turpis commodo.
-                    Proin elementum, nibh non egestas sodales, augue quam aliquet est, id egestas diam justo adipiscing ante.
-                    Pellentesque tempus nulla non urna eleifend ut ultrices nisi faucibus.
-                    Vestibulum scelerisque ultricies libero id hendrerit. Vivamus malesuada quam faucibus ante dignissim auctor
-                    hendrerit libero placerat. Nulla facilisi. Proin aliquam felis non arcu molestie at accumsan turpis commodo.
-                    Proin elementum, nibh non egestas sodales, augue quam aliquet est, id egestas diam justo adipiscing ante.
-                </p>
-                <p>
-                    Praesent a dolor leo. Duis in felis in tortor lobortis volutpat et pretium tellus. Vestibulum ac ante nisl,
-                    a elementum odio. Duis semper risus et lectus commodo fringilla. Maecenas sagittis convallis justo vel mattis.
-                    placerat, nunc diam iaculis massa, et aliquet nibh leo non nisl vitae porta lobortis, enim neque fringilla nunc,
-                    eget faucibus lacus sem quis nunc suspendisse nec lectus sit amet augue rutrum vulputate ut ut mi. Aenean
-                    elementum, mi sit amet porttitor lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor.
-                </p>
                 <section>
                     <header>
-                        <h3>Something else</h3>
+                        <h3>Algo más</h3>
                     </header>
-                    <p>
-                        Elementum odio duis semper risus et lectus commodo fringilla. Maecenas sagittis convallis justo vel mattis.
-                        placerat, nunc diam iaculis massa, et aliquet nibh leo non nisl vitae porta lobortis, enim neque fringilla nunc,
-                        eget faucibus lacus sem quis nunc suspendisse nec lectus sit amet augue rutrum vulputate ut ut mi. Aenean
-                        elementum, mi sit amet porttitor lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor
-                        sit amet nullam consequat feugiat dolore tempus.
-                        Elementum odio duis semper risus et lectus commodo fringilla. Maecenas sagittis convallis justo vel mattis.
-                        placerat, nunc diam iaculis massa, et aliquet nibh leo non nisl vitae porta lobortis, enim neque fringilla nunc,
-                        eget faucibus lacus sem quis nunc suspendisse nec lectus sit amet augue rutrum vulputate ut ut mi. Aenean
-                        elementum, mi sit amet porttitor lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor.
-                    </p>
-                    <p>
-                        Nunc diam iaculis massa, et aliquet nibh leo non nisl vitae porta lobortis, enim neque fringilla nunc,
-                        eget faucibus lacus sem quis nunc suspendisse nec lectus sit amet augue rutrum vulputate ut ut mi. Aenean
-                        elementum, mi sit amet porttitor lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor
-                        sit amet nullam consequat feugiat dolore tempus.
-                    </p>
+                    <div v-html="something">
+                    </div>
+
                 </section>
                 <section>
                     <header>
-                        <h3>So in conclusion ...</h3>
+                        <h3>Conclusión</h3>
                     </header>
                     <p>
-                        Nunc diam iaculis massa, et aliquet nibh leo non nisl vitae porta lobortis, enim neque fringilla nunc,
-                        eget faucibus lacus sem quis nunc suspendisse nec lectus sit amet augue rutrum vulputate ut ut mi. Aenean
-                        elementum, mi sit amet porttitor lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor
-                        sit amet nullam consequat feugiat dolore tempus. Elementum odio duis semper risus et lectus commodo fringilla.
-                        Maecenas sagittis convallis justo vel mattis.
+                        {{conclusion}}
                     </p>
                 </section>
             </article>
@@ -78,39 +40,43 @@
 export default {
     data() {
         return {
-            mensaje: "Elemento ramdon 1111",
-            cosa: this.$route.params.post_id
+            title: "Como Instalar Unity en Windows 10",
+            body: "Este es el cuerpo,",
+            conclusion: "Este nivel de joan planas ",
+            meta_description: "Instalcion de unity en windows 10 utilizando UnityHub ",
+            something: "<p> Este es un ejempo de algo mas </p>",
+            banner: "https://res.cloudinary.com/dd7j5cf6d/image/upload/v1569186062/flower-min.jpg"
         };
     },
     methods: {
         nextPage() {
             this.cosa = this.$route.params.post_id
+            this.something = "<p> Este es un ejempo de algo mas </p>"
         },
         created() {
+            this.data()
             this.cosa = this.$route.params.post_id
+
         },
+    },
+    metaInfo: {
+        htmlAttrs: {
+            lang: 'es',
+            amp: true
+        },
+        meta: [{
+                charset: 'utf-8'
+            },
+            {
+                name: "description",
+                content: "Learn coding with our free tutorials"
+            }, {
+                name: "keywords",
+                content: "react,vue,angular"
+            }
+        ],
+        title: 'XiaoriLab',
+        titleTemplate: '%s - El mejor articulo'
     }
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-
-<style scoped>
-h3 {
-    margin: 40px 0 0;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    display: inline-block;
-    margin: 0 10px;
-}
-
-a {
-    color: #42b983;
-}
-</style>

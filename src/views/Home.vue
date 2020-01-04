@@ -10,7 +10,7 @@
                     <!-- Portfolio -->
                     <section>
                         <header class="major">
-                            <h2>Projectos</h2>
+                            <h2>Articulos</h2>
 
                         </header>
 
@@ -109,7 +109,7 @@
                     <!-- Blog -->
                     <section>
                         <header class="major">
-                            <h2>Articulos</h2>
+                            <h2>Proyectos</h2>
                         </header>
                         <div class="row">
                             <div class="col-6 col-12-small">

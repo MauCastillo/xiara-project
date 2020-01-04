@@ -4,14 +4,14 @@
     <section id="header">
         <!-- Logo -->
         <h1>
-            <a href="index.html">Xiara Blog</a>
+            <router-link to="/">XiaoriLab</router-link>
         </h1>
 
         <!-- Nav -->
         <nav id="nav">
             <ul>
                 <li class="current">
-                    <router-link to="/home">Inicio</router-link>
+                    <router-link to="/">Inicio</router-link>
                 </li>
                 <li>
                     <router-link to="/projects">Proyectos</router-link>
@@ -31,10 +31,10 @@
                     </ul>
                 </li>
                 <li>
-                     <router-link to="/blog">Articulos</router-link>
+                     <router-link to="/blog">Artículos</router-link>
                 </li>
                 <li>
-                     <router-link to="/article">About Me</router-link>
+                     <router-link to="/article/mao">Sobre mí </router-link>
                 </li>
             </ul>
         </nav>
