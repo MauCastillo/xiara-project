@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Blog from "./views/Blog.vue"
-import Article from "./views/Article.vue"
-import Home from "./views/Home.vue"
+import Blog from "@/views/Blog.vue"
+import Article from "@/views/Article.vue"
+import Home from "@/views/Home.vue"
 
 Vue.use(VueRouter)
 

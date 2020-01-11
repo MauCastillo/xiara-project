@@ -34,7 +34,7 @@
                      <router-link to="/blog">Artículos</router-link>
                 </li>
                 <li>
-                     <router-link to="/article/mao">Sobre mí </router-link>
+                     <router-link to="/article/1">Sobre mí </router-link>
                 </li>
             </ul>
         </nav>

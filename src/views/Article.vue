@@ -10,7 +10,9 @@
                 </a>
                 <header>
                     <h2>{{ title }}</h2>
-                    <p>{{ meta_description }}</p>
+                    <p>{{ metaDescription }}</p>
+                    <p>Fecha de publicación: {{ published_date }}</p>
+                    <p>Tiempo de lectura: {{ read_time }} minutos</p>
                 </header>
                 <div v-html="body"></div>
 
@@ -27,7 +29,7 @@
                         <h3>Conclusión</h3>
                     </header>
                     <p>
-                        {{conclusion}}
+                        {{summary}}
                     </p>
                 </section>
             </article>
@@ -37,28 +39,70 @@
 </template>
 
 <script>
+import {
+    BaseUrl,
+    BaseTitle
+} from '@/resource/static'
+import {
+    store
+} from '@/resource/store'
+
 export default {
+
     data() {
         return {
-            title: "Como Instalar Unity en Windows 10",
-            body: "Este es el cuerpo,",
-            conclusion: "Este nivel de joan planas ",
-            meta_description: "Instalcion de unity en windows 10 utilizando UnityHub ",
-            something: "<p> Este es un ejempo de algo mas </p>",
-            banner: "https://res.cloudinary.com/dd7j5cf6d/image/upload/v1569186062/flower-min.jpg"
+            id: '',
+            title: '',
+            author_id: '',
+            read_time: '',
+            body: '',
+            summary: '',
+            banner: '',
+            metaTag: '',
+            metaDescription: '',
+            date: '',
+            something: ''
+
         };
     },
-    methods: {
-        nextPage() {
-            this.cosa = this.$route.params.post_id
-            this.something = "<p> Este es un ejempo de algo mas </p>"
-        },
-        created() {
-            this.data()
-            this.cosa = this.$route.params.post_id
+    mounted() {
+        let renderObj = this
 
-        },
+        this.axios.post(BaseUrl, {
+            function: 'get_post',
+            parametros: {
+                'id': this.$route.params.post_id
+            }
+
+        }).then(function (response) {
+            const content = response.data[0]
+
+            renderObj.id = content.id
+            renderObj.title = content.title
+            renderObj.author_id = content.author_id
+            renderObj.body = content.body
+            renderObj.read_time = content.read_time
+            renderObj.summary = content.summary
+            renderObj.banner = content.banner
+            renderObj.metaTag = content.meta_tag
+            renderObj.metaDescription = content.meta_description
+            renderObj.published_date = content.date
+            renderObj.something = content.something
+
+        }).catch(function (error) {
+            // eslint-disable-next-line no-console
+            console.log(error)
+        })
+        this.$meta().refresh()
+
     },
+    computed: {
+        newMessages() {
+            return this.count;
+        }
+    },
+
+    methods: {},
     metaInfo: {
         htmlAttrs: {
             lang: 'es',
@@ -69,14 +113,14 @@ export default {
             },
             {
                 name: "description",
-                content: "Learn coding with our free tutorials"
+                content: store.getters.meta_description
             }, {
                 name: "keywords",
-                content: "react,vue,angular"
+                content: store.getters.meta_tag
             }
         ],
-        title: 'XiaoriLab',
-        titleTemplate: '%s - El mejor articulo'
+        title: BaseTitle,
+        titleTemplate: `%s - ${store.getters.title}`
     }
 };
 </script>
