@@ -1,4 +1,6 @@
 # xiara-project
+Give visibility to software, backend, frontend and game development projects.
+Measure the use of your own website by building a personal brand
 
 ## Project setup
 ```
