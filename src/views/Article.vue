@@ -94,7 +94,6 @@ export default {
             console.log(error)
         })
         this.$meta().refresh()
-
     },
     computed: {
         newMessages() {
